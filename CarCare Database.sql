@@ -1,7 +1,7 @@
-INSERT INTO Administrators (AdministratorFName, AdministratorLName)
-Values
-	('Elizabeth', 'Morrow'),
-	('Wesley', 'Newport'),
-	('Shane', 'Sharper'),
-	('Shannon', 'Dennis'),
-	('Carter', 'Morrison'); 
+USE CarCare
+
+
+SELECT RepairStatus,Repairs.TechnicianID, Technicians.TechnicianFName,Technicians.TechnicianLName,CustomerID
+FROM Repairs
+	INNER JOIN Technicians
+	On Repairs.TechnicianID = Technicians.TechnicianID;
