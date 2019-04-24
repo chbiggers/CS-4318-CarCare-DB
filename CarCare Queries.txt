@@ -1,0 +1,37 @@
+//Queries and Aggregate Functions
+
+USE CarCare
+
+SELECT * FROM Administrators;
+SELECT COUNT(*) FROM Administrators;
+
+SELECT * FROM CompleteRepairs;
+SELECT COUNT(*) FROM CompleteRepairs;
+
+SELECT * FROM Customer;
+SELECT COUNT(*) FROM Customer;
+
+SELECT * FROM InProgressRepairs;
+SELECT COUNT(*) FROM InProgressRepairs;
+
+SELECT * FROM Repairs;
+SELECT COUNT(*) FROM Repairs;
+
+SELECT * FROM Technicians;
+SELECT COUNT(*) FROM Technicians;
+
+SELECT * FROM Vehicles;
+SELECT COUNT(*) FROM Vehicles;
+
+//Joint Queries
+
+SELECT RepairStatus,TechnicianID,Repairs.CustomerID, Customer.CustomerFName,CustomerLname
+FROM Repairs
+	INNER JOIN Customer
+	On Repairs.CustomerID = Customer.CustomerID;
+
+SELECT RepairStatus,Repairs.TechnicianID, Technicians.TechnicianFName,Technicians.TechnicianLName,CustomerID
+FROM Repairs
+	INNER JOIN Technicians
+	On Repairs.TechnicianID = Technicians.TechnicianID;
+
